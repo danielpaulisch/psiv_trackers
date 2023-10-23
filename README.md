@@ -21,3 +21,33 @@ L'objectiu d'aquest repte és saber quants cotxes es mouen en cada un dels carri
 El GitHub l'hem distribuït de la següent manera:
 - directori vídeos: conté el vídeo en el qual vam fer proves.
 - tracker1.py: fitxer Python que conté el codi final del programa tracker.
+
+
+## BASE DE DADES
+
+La base de dades que hem utilitzat ha estat un vídeo que l'hem extret del Campus Virtual. Específicament el vídeo "Seqüència Short".
+
+
+## PROCEDIMENT
+
+### DETECCIO COTXES
+
+
+EXPLICACION CODIGO ADAN
+
+### COMPTADOR ENTRADA I SORTIDA
+
+EXPLICACION CODIGO ADAN
+
+
+## RESULTATS
+
+He pogut detectar tots els cotxes sense cap anomalia i abordant tots els possibles outliers.
+També hem fet el comptador sense cap problema, concretament hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
+
+La comprovació la volíem haver fet amb una intel·ligència artificial, no obstant això, vam acabar decidint fer-ho de manera manual, ja que el vídeo no era molt llarg.
+
+## CONCLUSIÓ
+
+Com bé ja hem comentat abans a l'apartat de resultats, no hi ha hagut cap problema per fer aquest repte, en comparació amb el repte passat.
+La detecció dels cotxes l'hem fet sense cap problema i la part de detecció també.
