@@ -20,4 +20,4 @@ L'objectiu d'aquest repte és saber quants cotxes es mouen en cada un dels carri
 
 El GitHub l'hem distribuït de la següent manera:
 - directori vídeos: conté el vídeo en el qual vam fer proves.
-- - tracker1.py: fitxer Python que conté el codi final del programa tracker.
+- tracker1.py: fitxer Python que conté el codi final del programa tracker.
