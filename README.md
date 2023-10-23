@@ -1,8 +1,8 @@
-## SEGUIMENT D'OBJECTES (TRACKER)
+# SEGUIMENT D'OBJECTES (TRACKER)
 
 
 
-# INTRODUCCIÓ 
+## INTRODUCCIÓ 
 
 El seguiment d'objectes (tracking)  en la visió artificial representa una tasca de gran rellevància. Sobretot en aplicacions de processament d'imatges, encarregades d'analitzar el flux de vídeo provinent de càmeres.
 
@@ -20,6 +20,6 @@ Addicionalment,  examinarem detalladament l'ús del seguiment d'objectes amb la 
 Per altra banda, OpenCV també posa a les nostres mans, trackers ja implementats i integrats com ara, OOSTING, MIL, KCF, CSRT, MedianFlow, TLD, MOSSE i GOTURN. 
 
 
-# OBJECTES 
+## OBJECTES 
 
 L'objectiu d'aquest repte és saber quants cotxes es mouen en cada un dels carrils d'entrada i de sortida, és a dir, fer un comptador del cotxes que pujen i baixen. Fer un programa com aquest fa que puguem monitoritzar  i controlar el flux de sortida i d'entrada i el grau d'oucpació del pàrquing. 
