@@ -30,7 +30,7 @@ La base de dades que hem utilitzat ha estat un vídeo que l'hem extret del Campu
 
 ## PROCEDIMENT
 
-### DETECCIO COTXES
+### DETECCIÓ COTXES
 
 
 EXPLICACION CODIGO ADAN
