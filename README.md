@@ -52,19 +52,22 @@ Per rectangular els cotxes només hem hagut d'afegir una condició, la relació 
 
 ### COMPTADOR ENTRADA I SORTIDA PÀRQUING
 
-Aquesta part l'hem separat en classes. Primerament hem fet la classe Objecte, on cada instància representa un cotxe de l'escena. 
-Per cada instància d'objecte, té inicialitzat un centroide, l'identificador i una etiqueta per saber si està o no a l'escena. Aquesta classe té la funcionalitat de calcular la distància euclidiana entre el cetroide de l'objecte actual amb el centroide que se li passa per paràmetre. 
-Que la utilitzarem més endavant a la classe Tracker, per trobar els centroides i trackejar el cotxe en els diferents frames. 
+Aquesta part l'hem separat en classes. Primerament, hem fet la classe Objecte, on cada instància representa un cotxe de l'escena.
+Per cada instància d'objecte, té inicialitzat un centroide, l'identificador i una etiqueta per saber si està o no a l'escena. Aquesta classe té la funcionalitat de calcular la distància euclidiana entre el centroide de l'objecte actual amb el centroide que se li passa per paràmetre.
+Que la utilitzarem més endavant a la classe Tracker, per trobar els centroides i trackejar el cotxe en els diferents frames.
 
-Un cop acabada la classe Objecte, creem la classe Tracker; aquesta s'encarrega de fer el procés de tracking del programa. 
-Aquest codi defineix una classe anomenada `Tracker`. Aquí hi ha un resum dels seus components:
+Un cop acabada la classe Objecte, creem la classe Tracker; aquesta s'encarrega de fer el procés de tracking del programa.
 El tracker conté una llista d'objectes, que serà un conjunt de instàncies de la classe Objecte que faran referència als cotxes de l'escena, una llista d'identificadors dels cotxes i max_frame que fa referència al número màxim de frames que es necessita per tal de desvincular l'identificador d'un cotxe, ja que aquest no està en el frame actual.
-Aquesta classe té una funcionalitat, la de detecció, que pren com a paràmetre objectes_detectats i fa el seguiment d'aquesta objectes. 
-Primer mira si hi ha objectes, en cas que no s'hi hagi s'assigna un identificador a cada objecte detectat i s'afegeix a la llista; en cas que hi hagi objectes a la llista calcula una matriu de distàncies amb la distància euclidiana entre els objectes existents i els detectats, i es fa una assignació dels objectes detectats al existents o en crea un de nou si no en troba. 
-Si no es detecten objectes, es posa com a 1 l'etiqueta de la classe Objecte i s'elimina els objectes que s'hagin excedit el límit de max_frame. 
-En cas que hi hagin més objectes existents que objectes detectats, s'assigenen els objectes detectats als objectes existents segons el criteri de distàncies mínimes; i si hi ha més objectes detectats que existents, s'assignen els objectes existents als objectes detectats segons el mateix criteri i s'eliminen els objectes que s'han passat el límit de max_frame. 
+Aquesta classe té una funcionalitat, la de detecció, que pren com a paràmetre objectes_detectats i fa el seguiment d'aquests objectes.
+Primer mira si hi ha objectes, en cas que no n'hi hagi s'assigna un identificador a cada objecte detectat i s'afegeix a la llista; en cas que hi hagi objectes a la llista calcula una matriu de distàncies amb la distància euclidiana entre els objectes existents i els detectats, i es fa una assignació dels objectes detectats als existents o en crea un de nou si no en troba.
+Si no es detecten objectes, es posa com a 1 l'etiqueta de la classe Objecte i s'elimina els objectes que s'hagin excedit el límit de max_frame.
+En cas que hi hagi més objectes existents que objectes detectats, s'assignen els objectes detectats als objectes existents segons el criteri de distàncies mínimes; i si hi ha més objectes detectats que existents, s'assignen els objectes existents als objectes detectats segons el mateix criteri i s'eliminen els objectes que s'han passat el límit de max_frame.
 
-Per últim hem creat la classe Contador
+Finalment, hem creat la classe Contador que s'encarrega de fer el comptatge dels cotxes que entren i surten del pàrquing.
+Aquesta classe conté l'atribut _y que fa referència al centroide de la classe Objecte, _sobre i _sota són llistes que contenen els identificadors dels cotxes que està per sobre o per sota de la línia que hem creat per separar entre els cotxes que pugen i baixen, _contat una llista que fa referència als cotxes que s'han comptat i per últim _contar_baixa i _contar_puja que són comptadors dels cotxes que entre i surten del pàrquing.
+Aquesta classe té una funcionalitat, "contar", que rep com a paràmetres centroide i nom. Primer valida que nom no estigui a la llista de _contat, en cas que es compleixi, mirem si nom està a la llista _per_sota i el valor de _y sigui major al valor de y del centroide, si es compleix aquesta condició augmentem el comptador _contar_puja i s'afegeix com a comptat aquest objecte.
+Si el nom està a la llista _sobre i el valor de y és més petit que el valor de y del centroide, augmentem el comptador de _contar_baixa i s'afegeix com a comptat aquest objecte.
+Per acabar, si nom no està a les llistes _per_sota i _sobre comparem el valor de y amb el de y del centroide i s'afegeix a la llista de _sobre si _y és major que y del centroide i, per consegüent, si _y és més petit que la y del centroide s'afegeix a la llista _per_sota.
 
 ## RESULTATS
 
