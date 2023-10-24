@@ -32,7 +32,21 @@ La base de dades que hem utilitzat ha estat un vídeo que l'hem extret del Campu
 
 ### DETECCIÓ COTXES
 
-Primer de tot vam començar fent una subtracció del fons en vídeos, amb la funció createBackgroundSubtractorMOG de la lliberira cv2, ja que és una funció bastant eficaç i senzilla que es basa en mescles gaussianes.
+Primer de tot comencem fent una subtracció del fons del vídeo, amb la funció createBackgroundSubtractorMOG de la lliberira cv2, ja que és una funció bastant eficaç i senzilla que es basa en mescles gaussianes.
+Específicament apliquem la funció createBackgroundSubtractorMOG, per a cada frame.
+Un cop hem tret el fons reduim l'àrea dels frames, és a dir, tallem la imatge per tal de quedar-nos amb l'entrada i la sortida del pàrquing, per això acabem tallant tota la part d'adalt del vídeos i deixant la part final per sota del pas de zebra del final.
+
+Seguidament apliquem les funcions morfològiques dilate de la llibreria cv2, aquí, un element de píxel és '1' si almenys un píxel sota el nucli és '1'. Per tant, augmenta la regió blanca a la imatge o augmenta la mida de l'objecte en primer pla.  
+
+Un altra funció que utilitzem és la morphologyEx, aquesta es basa en aplicar l'erosió seguida de dilatació. És útil per eliminar el soroll que queda.
+
+Un cop hem acabat d'aplicar les funcions morfològiques a tots els frames i ens queden els cotxes en moviment com una taca blanca i el fons negre, apliquem la funció de la llibreria cv2 findContour(), aquesta ajuda a extraure els contorns d'aquestes taques.
+
+Per cada contorn detectat mirem la seva àrea i sempre i quan sigui més gran a 4000, el tenim en compte, ja que l'etiquetem com a cotxe. En cas que sigui més petita l'àrea vol dir que estem detectant alguna moto o alguna persona i en aquest cas no ens interessa. 
+
+
+
+
 
 
 
@@ -53,3 +67,4 @@ La comprovació la volíem haver fet amb una intel·ligència artificial, no obs
 
 Com bé ja hem comentat abans a l'apartat de resultats, no hi ha hagut cap problema per fer aquest repte, en comparació amb el repte passat.
 La detecció dels cotxes l'hem fet sense cap problema i la part de detecció també.
+Només hem tingut un problema que és la part de la subtracció del fonns, ja que si es para passa a formar part del fons i s'elimina, no obstant això ene l nostre cas això no suposa un problema.
