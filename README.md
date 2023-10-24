@@ -32,10 +32,12 @@ La base de dades que hem utilitzat ha estat un vídeo que l'hem extret del Campu
 
 ### DETECCIÓ COTXES
 
+Primer de tot vam començar fent una subtracció del fons en vídeos, amb la funció createBackgroundSubtractorMOG de la lliberira cv2, ja que és una funció bastant eficaç i senzilla que es basa en mescles gaussianes.
 
-EXPLICACION CODIGO ADAN
 
-### COMPTADOR ENTRADA I SORTIDA
+
+
+### COMPTADOR ENTRADA I SORTIDA PÀRQUING
 
 EXPLICACION CODIGO ADAN
 
