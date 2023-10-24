@@ -25,7 +25,7 @@ El GitHub l'hem distribuït de la següent manera:
 
 ## BASE DE DADES
 
-La base de dades que hem utilitzat han estat uns vídeos que els hem extret del Campus Virtual. Específicament el vídeo "Seqüència Short",  "Seqüència middle",  "Seqüència shadow",  "Seqüència long 1",  "Seqüència long 2".
+La base de dades que hem utilitzat han estat uns vídeos que els hem extret del Campus Virtual. Específicament el vídeo "Seqüència Short",  "Seqüència middle",  "Seqüència shadow",  "Seqüència long 1" i  "Seqüència long 2".
 
 
 ## PROCEDIMENT
