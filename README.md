@@ -59,21 +59,12 @@ Que la utilitzarem més endavant a la classe Tracker, per trobar els centroides 
 Un cop acabada la classe Objecte, creem la classe Tracker; aquesta s'encarrega de fer el procés de tracking del programa. 
 Aquest codi defineix una classe anomenada `Tracker`. Aquí hi ha un resum dels seus components:
 El tracker conté una llista d'objectes, que serà un conjunt de instàncies de la classe Objecte que faran referència als cotxes de l'escena, una llista d'identificadors dels cotxes i max_frame que fa referència al número màxim de frames que es necessita per tal de desvincular l'identificador d'un cotxe, ja que aquest no està en el frame actual.
-Aquesta classe té una funcionalitat, la de detecció, que pren com a paràmetre objectes_detectats
-2. El mètode `deteccio` pren un argument `objectes_detectats`. Aquest mètode implementa la lògica per al seguiment dobjectes utilitzant un algorisme de seguiment simple.
+Aquesta classe té una funcionalitat, la de detecció, que pren com a paràmetre objectes_detectats i fa el seguiment d'aquesta objectes. 
+Primer mira si hi ha objectes, en cas que no s'hi hagi s'assigna un identificador a cada objecte detectat i s'afegeix a la llista; en cas que hi hagi objectes a la llista calcula una matriu de distàncies amb la distància euclidiana entre els objectes existents i els detectats, i es fa una assignació dels objectes detectats al existents o en crea un de nou si no en troba. 
+Si no es detecten objectes, es posa com a 1 l'etiqueta de la classe Objecte i s'elimina els objectes que s'hagin excedit el límit de max_frame. 
+En cas que hi hagin més objectes existents que objectes detectats, s'assigenen els objectes detectats als objectes existents segons el criteri de distàncies mínimes; i si hi ha més objectes detectats que existents, s'assignen els objectes existents als objectes detectats segons el mateix criteri i s'eliminen els objectes que s'han passat el límit de max_frame. 
 
-   - Si no hi ha objectes existents a `_objectes`, s'assigna un identificador a cada objecte detectat i s'afegeix a la llista `_objectes`.
-
-   - Si hi ha objectes existents, calcula una matriu de distàncies entre els objectes existents i els objectes detectats, utilitzant el mètode `dist_euclidean` de la classe `Objecte`. Després, realitza operacions per assignar els objectes detectats als objectes existents o crear nous objectes si cal.
-
-   - Si no es detecten objectes, augmenta el comptador `_no_esta` per a cada objecte existent i elimina aquells que hagin excedit el límit establert per `_max_frame`.
-
-   - Si hi ha més objectes existents que objectes detectats, s'assignen els objectes detectats als objectes existents segons les distàncies mínimes i s'actualitzen els atributs corresponents.
-
-   - Si hi ha més objectes detectats que objectes existents, s'assignen els objectes existents als objectes detectats segons les distàncies mínimes, i s'eliminen els objectes que han excedit el límit establert per `_max_frame`.
-
-El codi proporcionat implementa una lògica bàsica de seguiment d'objectes amb distàncies euclidianes i algunes regles d'assignació.
-
+Per últim hem creat la classe Contador
 
 ## RESULTATS
 
