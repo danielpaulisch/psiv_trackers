@@ -50,11 +50,29 @@ Per rectangular els cotxes només hem hagut d'afegir una condició, la relació 
 
 
 
-
-
 ### COMPTADOR ENTRADA I SORTIDA PÀRQUING
 
-Aquesta part l'hem separat en classes 
+Aquesta part l'hem separat en classes. Primerament hem fet la classe Objecte, on cada instància representa un cotxe de l'escena. 
+Per cada instància d'objecte, té inicialitzat un centroide, l'identificador i una etiqueta per saber si està o no a l'escena. Aquesta classe té la funcionalitat de calcular la distància euclidiana entre el cetroide de l'objecte actual amb el centroide que se li passa per paràmetre. 
+Que la utilitzarem més endavant a la classe Tracker, per trobar els centroides i trackejar el cotxe en els diferents frames. 
+
+Un cop acabada la classe Objecte, creem la classe Tracker; aquesta s'encarrega de fer el procés de tracking del programa. 
+Aquest codi defineix una classe anomenada `Tracker`. Aquí hi ha un resum dels seus components:
+El tracker conté una llista d'objectes, que serà un conjunt de instàncies de la classe Objecte que faran referència als cotxes de l'escena, una llista d'identificadors dels cotxes i max_frame que fa referència al número màxim de frames que es necessita per tal de desvincular l'identificador d'un cotxe, ja que aquest no està en el frame actual.
+Aquesta classe té una funcionalitat, la de detecció, que pren com a paràmetre objectes_detectats
+2. El mètode `deteccio` pren un argument `objectes_detectats`. Aquest mètode implementa la lògica per al seguiment dobjectes utilitzant un algorisme de seguiment simple.
+
+   - Si no hi ha objectes existents a `_objectes`, s'assigna un identificador a cada objecte detectat i s'afegeix a la llista `_objectes`.
+
+   - Si hi ha objectes existents, calcula una matriu de distàncies entre els objectes existents i els objectes detectats, utilitzant el mètode `dist_euclidean` de la classe `Objecte`. Després, realitza operacions per assignar els objectes detectats als objectes existents o crear nous objectes si cal.
+
+   - Si no es detecten objectes, augmenta el comptador `_no_esta` per a cada objecte existent i elimina aquells que hagin excedit el límit establert per `_max_frame`.
+
+   - Si hi ha més objectes existents que objectes detectats, s'assignen els objectes detectats als objectes existents segons les distàncies mínimes i s'actualitzen els atributs corresponents.
+
+   - Si hi ha més objectes detectats que objectes existents, s'assignen els objectes existents als objectes detectats segons les distàncies mínimes, i s'eliminen els objectes que han excedit el límit establert per `_max_frame`.
+
+El codi proporcionat implementa una lògica bàsica de seguiment d'objectes amb distàncies euclidianes i algunes regles d'assignació.
 
 
 ## RESULTATS
