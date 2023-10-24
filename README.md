@@ -20,12 +20,12 @@ L'objectiu d'aquest repte és saber quants cotxes es mouen en cada un dels carri
 
 El GitHub l'hem distribuït de la següent manera:
 - directori vídeos: conté el vídeo en el qual vam fer proves.
-- tracker1.py: fitxer Python que conté el codi final del programa tracker.
+- tracker.py: fitxer Python que conté el codi final del programa tracker.
 
 
 ## BASE DE DADES
 
-La base de dades que hem utilitzat ha estat un vídeo que l'hem extret del Campus Virtual. Específicament el vídeo "Seqüència Short".
+La base de dades que hem utilitzat han estat uns vídeos que els hem extret del Campus Virtual. Específicament el vídeo "Seqüència Short",  "Seqüència middle",  "Seqüència shadow",  "Seqüència long 1",  "Seqüència long 2".
 
 
 ## PROCEDIMENT
@@ -71,13 +71,20 @@ Per acabar, si nom no està a les llistes _per_sota i _sobre comparem el valor d
 
 ## RESULTATS
 
-He pogut detectar tots els cotxes sense cap anomalia i abordant tots els possibles outliers.
-També hem fet el comptador sense cap problema, concretament hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
+Hem pogut detectar tots els cotxes sense cap anomalia i abordant tots els possibles outliers.
+L'únic punt a destacar està quan traiem el fons, ja que quan un cotxe es para i no està en moviment durat uns segons, aquest passa a ser part del fons i amb la funció createBackgroundSubtractorMOG l'elimina. En el nostre cas no ens afecta, així doncs no l'hem tingut en compte.
 
-La comprovació la volíem haver fet amb una intel·ligència artificial, no obstant això, vam acabar decidint fer-ho de manera manual, ja que el vídeo no era molt llarg.
+També hem fet el comptador sense cap problema, concretament ens han donats els següents resultats:
+- Seqüència short: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
+- Seqüència middle: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
+- Seqüència shadow: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
+- Seqüència long 1: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
+- Seqüència long 2: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
+
+La comprovació la volíem haver fet amb una intel·ligència artificial, no obstant això, vam acabar decidint fer-ho de manera manual, ja que els vídeos no són massa llargs. 
 
 ## CONCLUSIÓ
 
-Com bé ja hem comentat abans a l'apartat de resultats, no hi ha hagut cap problema per fer aquest repte, en comparació amb el repte passat.
-La detecció dels cotxes l'hem fet sense cap problema i la part de detecció també.
-Només hem tingut un problema que és la part de la subtracció del fonns, ja que si es para passa a formar part del fons i s'elimina, no obstant això ene l nostre cas això no suposa un problema.
+Després de la comprovació que hem fet,  hem pogut corrobar que els resultats són correctes i el programa és bastant robust, aj que funciona correctament amb tots els exemples. 
+Com bé ja hem comentat abans a l'apartat de resultats, no hi ha hagut cap problema per fer aquest repte, en comparació amb el repte passat, l'únic punt a destacar seria la part del fonsc, ja que els cotxes que es queden aturats i no es mouen, passen a ser part del fons i per tant no es detecta el cotxe. En el nostre cas això no ens ha suposat cap problema per fer el repte, ja que no hi ha cap cas de cotxes que entren o surten del pàrquing que es queden aturats durant uns segons. 
+Per altra banda la detecció de cotxes l'hem fet sense cap problema i la part del comptador també.
