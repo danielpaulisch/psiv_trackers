@@ -1,0 +1,105 @@
+baiax: 1 168
+baiax: 2 916
+baiax: 3 2065
+baiax: 4 3474
+baiax: 5 6459
+baiax: 6 6525
+baiax: 7 7864
+baiax: 8 10454
+baiax: 9 13337
+baiax: 10 14027
+puja: 1 17074
+puja: 2 20622
+puja: 3 21007
+PS C:\Users\LENOVO\Documents\uni\4t\psiv\tracking\psiv_trackers> & C:/Users/LENOVO/anaconda3/envs/prueba/python.exe c:/Users/LENOVO/Documents/uni/4t/psiv/tracking/psiv_trackers/adan.py
+baiax: 1 442
+baiax: 2 1685
+baiax: 3 3349
+baiax: 4 4911
+baiax: 5 5327
+puja: 1 7694
+baiax: 6 8106
+Traceback (most recent call last):
+  File "c:/Users/LENOVO/Documents/uni/4t/psiv/tracking/psiv_trackers/adan.py", line 194, in <module>
+    tratada = cv.morphologyEx(tratada,cv.MORPH_OPEN, np.ones((30,30)))
+KeyboardInterrupt
+PS C:\Users\LENOVO\Documents\uni\4t\psiv\tracking\psiv_trackers> & C:/Users/LENOVO/anaconda3/envs/prueba/python.exe c:/Users/LENOVO/Documents/uni/4t/psiv/tracking/psiv_trackers/adan.py
+baiax: 1 442
+baiax: 2 1685
+baiax: 3 3349
+baiax: 4 4911
+baiax: 5 5327
+puja: 1 7694
+baiax: 6 8106
+puja: 2 9979
+Traceback (most recent call last):
+  File "c:/Users/LENOVO/Documents/uni/4t/psiv/tracking/psiv_trackers/adan.py", line 193, in <module>
+    tratada = cv.dilate(fgmaskMOG, np.ones((3,3)), iterations=7)
+KeyboardInterrupt
+PS C:\Users\LENOVO\Documents\uni\4t\psiv\tracking\psiv_trackers> & C:/Users/LENOVO/anaconda3/envs/prueba/python.exe c:/Users/LENOVO/Documents/uni/4t/psiv/tracking/psiv_trackers/adan.py
+baiax: 1 442
+baiax: 2 1685
+baiax: 3 3349
+baiax: 4 4911
+baiax: 5 5327
+puja: 1 7694
+baiax: 6 8106
+puja: 2 9979
+puja: 3 10231
+puja: 4 11080
+puja: 5 14620
+Traceback (most recent call last):
+  File "c:/Users/LENOVO/Documents/uni/4t/psiv/tracking/psiv_trackers/adan.py", line 191, in <module>
+    fgmaskMOG = fgbg.apply(roi)
+KeyboardInterrupt
+PS C:\Users\LENOVO\Documents\uni\4t\psiv\tracking\psiv_trackers> & C:/Users/LENOVO/anaconda3/envs/prueba/python.exe c:/Users/LENOVO/Documents/uni/4t/psiv/tracking/psiv_trackers/adan.py
+baiax: 1 442
+baiax: 2 1685
+baiax: 3 3350
+baiax: 4 4911
+baiax: 5 5327
+baiax: 6 7773
+baiax: 7 8112
+baiax: 8 9526
+baiax: 9 10116
+baiax: 10 10237
+baiax: 11 10328
+puja: 1 11079
+baiax: 12 16096
+puja: 2 17146
+baiax: 13 17723
+baiax: 14 19311
+baiax: 15 19404
+baiax: 16 20564
+baiax: 17 22799
+puja: 3 24589
+baiax: 18 26023
+puja: 4 27521
+baiax: 19 28907
+baiax: 20 34206
+baiax: 21 35368
+puja: 5 37928
+baiax: 22 39469
+baiax: 23 40910
+baiax: 24 41218
+baiax: 25 41585
+puja: 6 43319
+baiax: 26 44006
+puja: 7 44313
+puja: 8 44733
+baiax: 27 45081
+baiax: 28 45573
+
+
+
+
+
+el camion hace que detecte se detecte que bajan coches de mas 
+al subir hay dos errores que se contrarestan, el comaion hace que no detecte un coche que sube pero hace que detecte 
+que un coche ha subido
+
+el coche blanco que sube y baja nosotros si que lo contamos como que sube y baja y lo damos por bueno, és un
+que pasa completament per la linia que nosaltres hem decicit que compte com ha coche que puja y baixa
+
+5 errores
+

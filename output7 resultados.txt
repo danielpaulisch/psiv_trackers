@@ -1,0 +1,11 @@
+puja: 1 91
+puja: 2 839
+baiax: 1 2006
+baiax: 2 2611
+puja: 3 2907
+puja: 4 5845
+puja: 5 6749
+puja: 6 7094
+
+
+todos bien compraobacin manual

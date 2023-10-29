@@ -1,0 +1,16 @@
+baiax: 1 186
+baiax: 2 934
+baiax: 3 2087
+baiax: 4 3490
+baiax: 5 6481
+baiax: 6 6544
+baiax: 7 7884
+baiax: 8 10482
+baiax: 9 13355
+baiax: 10 14190
+puja: 1 17048
+puja: 2 20594
+puja: 3 20985
+
+
+todos bien compraobacion manual
