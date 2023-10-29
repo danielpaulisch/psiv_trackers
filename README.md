@@ -20,34 +20,71 @@ L'objectiu d'aquest repte és saber quants cotxes es mouen en cada un dels carri
 
 El GitHub l'hem distribuït de la següent manera:
 - directori vídeos: conté el vídeo en el qual vam fer proves.
-- tracker1.py: fitxer Python que conté el codi final del programa tracker.
+- tracker.py: fitxer Python que conté el codi final del programa tracker.
 
 
 ## BASE DE DADES
 
-La base de dades que hem utilitzat ha estat un vídeo que l'hem extret del Campus Virtual. Específicament el vídeo "Seqüència Short".
+La base de dades que hem utilitzat han estat uns vídeos que els hem extret del Campus Virtual. Específicament el vídeo "Seqüència Short",  "Seqüència middle",  "Seqüència shadow",  "Seqüència long 1" i  "Seqüència long 2".
 
 
 ## PROCEDIMENT
 
 ### DETECCIÓ COTXES
 
+Aquesta part del codi és la primera que es fa i està al principi del codi principal, no està inclòs en cap classe.
+Primer de tot comencem fent una subtracció del fons del vídeo, amb la funció createBackgroundSubtractorMOG de la lliberira cv2, ja que és una funció bastant eficaç i senzilla que es basa en mescles gaussianes.
+Específicament apliquem la funció createBackgroundSubtractorMOG, per a cada frame.
+Un cop hem tret el fons reduim l'àrea dels frames, és a dir, tallem la imatge per tal de quedar-nos amb l'entrada i la sortida del pàrquing, per això acabem tallant tota la part de dalt del vídeo i deixant la part final per sota del pas de zebra del final.
 
-EXPLICACION CODIGO ADAN
+Seguidament, apliquem les funcions morfològiques dilate de la llibreria cv2, aquí, un element de píxel és '1' si almenys un píxel sota el nucli és '1'. Per tant, augmenta la regió blanca a la imatge o augmenta la mida de l'objecte en primer pla.
 
-### COMPTADOR ENTRADA I SORTIDA
+Una altra funció que utilitzem és la morphologyEx, aquesta es basa a aplicar l'erosió seguida de dilatació. És útil per eliminar el soroll que queda.
 
-EXPLICACION CODIGO ADAN
+Un cop hem acabat d'aplicar les funcions morfològiques a tots els frames i ens queden els cotxes en moviment com una taca blanca i el fons negre, apliquem la funció de la llibreria cv2 findContour(), aquesta ajuda a extraure els contorns d'aquestes taques.
 
+Per cada contorn detectat, mirem la seva àrea, i sempre que sigui més gran a 4000, el tenim en compte, ja que l'etiquetem com a cotxe. En cas que sigui més petita l'àrea vol dir que estem detectant alguna moto o alguna persona i en aquest cas no ens interessa, així doncs el descartem.
+
+Finalment per facilitar la visualització hem dibuixat uns rectangles que envoltenels cotxes, per tal de graficar millor el tracking dels automòbils.
+Per rectangular els cotxes només hem hagut d'afegir una condició, la relació amplada i llargada ha d'estar entre 0,6 i 1,5, no inclosos.
+
+
+
+### COMPTADOR ENTRADA I SORTIDA PÀRQUING
+
+Aquesta part l'hem separat en classes. Primerament, hem fet la classe Objecte, on cada instància representa un cotxe de l'escena.
+Per cada instància d'objecte, té inicialitzat un centroide, l'identificador i una etiqueta per saber si està o no a l'escena. Aquesta classe té la funcionalitat de calcular la distància euclidiana entre el centroide de l'objecte actual amb el centroide que se li passa per paràmetre.
+Que la utilitzarem més endavant a la classe Tracker, per trobar els centroides i trackejar el cotxe en els diferents frames.
+
+Un cop acabada la classe Objecte, creem la classe Tracker; aquesta s'encarrega de fer el procés de tracking del programa.
+El tracker conté una llista d'objectes, que serà un conjunt de instàncies de la classe Objecte que faran referència als cotxes de l'escena, una llista d'identificadors dels cotxes i max_frame que fa referència al número màxim de frames que es necessita per tal de desvincular l'identificador d'un cotxe, ja que aquest no està en el frame actual.
+Aquesta classe té una funcionalitat, la de detecció, que pren com a paràmetre objectes_detectats i fa el seguiment d'aquests objectes.
+Primer mira si hi ha objectes, en cas que no n'hi hagi s'assigna un identificador a cada objecte detectat i s'afegeix a la llista; en cas que hi hagi objectes a la llista calcula una matriu de distàncies amb la distància euclidiana entre els objectes existents i els detectats, i es fa una assignació dels objectes detectats als existents o en crea un de nou si no en troba.
+Si no es detecten objectes, es posa com a 1 l'etiqueta de la classe Objecte i s'elimina els objectes que s'hagin excedit el límit de max_frame.
+En cas que hi hagi més objectes existents que objectes detectats, s'assignen els objectes detectats als objectes existents segons el criteri de distàncies mínimes; i si hi ha més objectes detectats que existents, s'assignen els objectes existents als objectes detectats segons el mateix criteri i s'eliminen els objectes que s'han passat el límit de max_frame.
+
+Finalment, hem creat la classe Contador que s'encarrega de fer el comptatge dels cotxes que entren i surten del pàrquing.
+Aquesta classe conté l'atribut _y que fa referència al centroide de la classe Objecte, _sobre i _sota són llistes que contenen els identificadors dels cotxes que està per sobre o per sota de la línia que hem creat per separar entre els cotxes que pugen i baixen, _contat una llista que fa referència als cotxes que s'han comptat i per últim _contar_baixa i _contar_puja que són comptadors dels cotxes que entre i surten del pàrquing.
+Aquesta classe té una funcionalitat, "contar", que rep com a paràmetres centroide i nom. Primer valida que nom no estigui a la llista de _contat, en cas que es compleixi, mirem si nom està a la llista _per_sota i el valor de _y sigui major al valor de y del centroide, si es compleix aquesta condició augmentem el comptador _contar_puja i s'afegeix com a comptat aquest objecte.
+Si el nom està a la llista _sobre i el valor de y és més petit que el valor de y del centroide, augmentem el comptador de _contar_baixa i s'afegeix com a comptat aquest objecte.
+Per acabar, si nom no està a les llistes _per_sota i _sobre comparem el valor de y amb el de y del centroide i s'afegeix a la llista de _sobre si _y és major que y del centroide i, per consegüent, si _y és més petit que la y del centroide s'afegeix a la llista _per_sota.
 
 ## RESULTATS
 
-He pogut detectar tots els cotxes sense cap anomalia i abordant tots els possibles outliers.
-També hem fet el comptador sense cap problema, concretament hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
+Hem pogut detectar tots els cotxes sense cap anomalia i abordant tots els possibles outliers.
+L'únic punt a destacar està quan traiem el fons, ja que quan un cotxe es para i no està en moviment durat uns segons, aquest passa a ser part del fons i amb la funció createBackgroundSubtractorMOG l'elimina. En el nostre cas no ens afecta, així doncs no l'hem tingut en compte.
 
-La comprovació la volíem haver fet amb una intel·ligència artificial, no obstant això, vam acabar decidint fer-ho de manera manual, ja que el vídeo no era molt llarg.
+També hem fet el comptador sense cap problema, concretament ens han donats els següents resultats:
+- Seqüència short: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
+- Seqüència middle: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
+- Seqüència shadow: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
+- Seqüència long 1: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
+- Seqüència long 2: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
+
+La comprovació la volíem haver fet amb una intel·ligència artificial, no obstant això, vam acabar decidint fer-ho de manera manual, ja que els vídeos no són massa llargs. 
 
 ## CONCLUSIÓ
 
-Com bé ja hem comentat abans a l'apartat de resultats, no hi ha hagut cap problema per fer aquest repte, en comparació amb el repte passat.
-La detecció dels cotxes l'hem fet sense cap problema i la part de detecció també.
+Després de la comprovació que hem fet,  hem pogut corrobar que els resultats són correctes i el programa és bastant robust, aj que funciona correctament amb tots els exemples. 
+Com bé ja hem comentat abans a l'apartat de resultats, no hi ha hagut cap problema per fer aquest repte, en comparació amb el repte passat, l'únic punt a destacar seria la part del fonsc, ja que els cotxes que es queden aturats i no es mouen, passen a ser part del fons i per tant no es detecta el cotxe. En el nostre cas això no ens ha suposat cap problema per fer el repte, ja que no hi ha cap cas de cotxes que entren o surten del pàrquing que es queden aturats durant uns segons. 
+Per altra banda la detecció de cotxes l'hem fet sense cap problema i la part del comptador també.
