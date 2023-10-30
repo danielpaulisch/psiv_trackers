@@ -170,7 +170,7 @@ Seqüència long 1: hi ha 56 cotxes que entren al pàrquing i 19 cotxes que en s
 
 Seqüència long 2: hi ha 133 cotxes que entren al pàrquing i 10 cotxes que en surten.
 
-Hem pogut abordar la majoria d'anomalies i outliers possibles en tots els vídeos, però hi ha casos que no sempre van del tot bé.
+Sembla que hem pogut abordar la majoria d'anomalies i outliers possibles en tots els vídeos, però hi ha casos que no sempre van del tot bé.
 
 La comprovació la volíem haver fet amb una intel·ligència artificial, no obstant això, vam acabar decidint fer-ho de manera manual, ja que els vídeos no són massa llargs i se'ns era més fàcil.
 
