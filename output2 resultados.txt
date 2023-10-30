@@ -1,0 +1,14 @@
+baiax: 1 454
+baiax: 2 570
+baiax: 3 646
+baiax: 4 857
+baiax: 5 1945
+puja: 1 4008
+baiax: 6 4487
+puja: 2 5034
+puja: 3 6692
+baiax: 7 12353
+baiax: 8 12409
+
+
+

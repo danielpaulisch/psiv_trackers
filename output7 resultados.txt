@@ -7,5 +7,3 @@ puja: 4 5845
 puja: 5 6749
 puja: 6 7094
 
-
-todos bien compraobacin manual

@@ -143,10 +143,3 @@ baiax: 132 114117
 baiax: 133 115872
 
 
-faltan muchos coches que bajan porque justo cunado se van en menos de 8 frames aparece otro coche por
-lo tano los identifica como sifuerna el mismo coche y no los vuelve a contar.
-
-erroresd e subida estan en los camiones ja que al no ser enorme los confunde con coches
-tambien hay erroes de subida al pasar cerca persona y monopatines y que una moto entre al parkin de tierra
-por un moemento detecta a las personas como un coche y luego al ponerse la moto de lado la detecta como el
-mismo coche pero encima por lo tanto los suma

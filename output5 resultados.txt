@@ -94,12 +94,5 @@ baiax: 28 45573
 
 
 
-el camion hace que detecte se detecte que bajan coches de mas 
-al subir hay dos errores que se contrarestan, el comaion hace que no detecte un coche que sube pero hace que detecte 
-que un coche ha subido
 
-el coche blanco que sube y baja nosotros si que lo contamos como que sube y baja y lo damos por bueno, és un
-que pasa completament per la linia que nosaltres hem decicit que compte com ha coche que puja y baixa
-
-5 errores
 
