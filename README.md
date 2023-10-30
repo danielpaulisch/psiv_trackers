@@ -85,7 +85,7 @@ Per acabar, si nom no està a les llistes _per_sota i _sobre comparem el valor d
 
 Un cop hem comprovat els nostres resultats amb el script de proves.ipynb hem obtingut els següents resultats.
 
-output2: seqüencia middle
+#### output2: seqüencia middle
 - detectat: 3 que pugen i  8 que baixen 
 - real:     5 que pugen i  7 que baixen
 - trobats:   0.8333333333333334
@@ -95,45 +95,45 @@ output2: seqüencia middle
 - hi ha 3 de cotxes de més respecte la ocupació real
 
 
-output3: seqüencia shadow
-detectat: 3 que pugen i 10 que baixen
-real:     3 que pugen i 10 que baixen
-trobats:   1.0
-n_trobats:   13 cotxes detectats en el vídeo
-n_fantasmes: 0
-fantasmes: 0.0
-Aquest cas és perfecte
+#### output3: seqüencia shadow
+- detectat: 3 que pugen i 10 que baixen
+- real:     3 que pugen i 10 que baixen
+- trobats:   1.0
+- n_trobats:   13 cotxes detectats en el vídeo
+- n_fantasmes: 0
+- fantasmes: 0.0
+- Aquest cas és perfecte
 
 
 
-output5: seqüencia long 1
-detectat: 19 que pugen i 56 que baixen
-real:     11 que pugen i 25 que baixen
-trobats:   0.8611111111111112
-n_trobats:   31 cotxes detectats en el vídeo
-n_fantasmes: 44 cotxes inventats
-fantasmes: 0.5866666666666667
-hi ha 23 de cotxes respecte la ocupació real
+#### output5: seqüencia long 1
+- detectat: 19 que pugen i 56 que baixen
+- real:     11 que pugen i 25 que baixen
+- trobats:   0.8611111111111112
+- n_trobats:   31 cotxes detectats en el vídeo
+- n_fantasmes: 44 cotxes inventats
+- fantasmes: 0.5866666666666667
+- hi ha 23 de cotxes respecte la ocupació real
 
 
-output6: sequencia long 2
-detectat: 10 que pugen i 133 que baixen
-real:     9 pugen i 138 que baixen
-trobats:   0.9183673469387755
-n_trobats:   135 cotxes detectats en el vídeo
-n_fantasmes: 8 cotxes inventats
-fantasmes: 0.055944055944055944
-hi ha 6 cotxes menys respecte l'ocupacio real  
+#### output6: sequencia long 2
+- detectat: 10 que pugen i 133 que baixen
+- real:     9 pugen i 138 que baixen
+- trobats:   0.9183673469387755
+- n_trobats:   135 cotxes detectats en el vídeo
+- n_fantasmes: 8 cotxes inventats
+- fantasmes: 0.055944055944055944
+- hi ha 6 cotxes menys respecte l'ocupacio real  
 
 
-output7: seqüencia short
-detectat: 6 que pugen i 2 que baixen 
-real:     6 que pugen i 2 que baixen
-trobats:   1.0
-n_trobats:   8  cotxes detectats en el vídeo
-n_fantasmes: 0  cotxes inventats
-fantasmes: 0.0
-Aquest cas és perfecte
+#### output7: seqüencia short
+- detectat: 6 que pugen i 2 que baixen 
+- real:     6 que pugen i 2 que baixen
+- trobats:   1.0
+- n_trobats:   8  cotxes detectats en el vídeo
+- n_fantasmes: 0  cotxes inventats
+- fantasmes: 0.0
+- Aquest cas és perfecte
 
 - Seqüència short: hi ha 2 cotxes que entren al pàrquing i 6 cotxes que en surten.
 - Seqüència middle: hi ha 8 cotxes que entren al pàrquing i 3 cotxes que en surten.
