@@ -11,7 +11,6 @@ baiax: 10 14027
 puja: 1 17074
 puja: 2 20622
 puja: 3 21007
-PS C:\Users\LENOVO\Documents\uni\4t\psiv\tracking\psiv_trackers> & C:/Users/LENOVO/anaconda3/envs/prueba/python.exe c:/Users/LENOVO/Documents/uni/4t/psiv/tracking/psiv_trackers/adan.py
 baiax: 1 442
 baiax: 2 1685
 baiax: 3 3349
@@ -19,11 +18,6 @@ baiax: 4 4911
 baiax: 5 5327
 puja: 1 7694
 baiax: 6 8106
-Traceback (most recent call last):
-  File "c:/Users/LENOVO/Documents/uni/4t/psiv/tracking/psiv_trackers/adan.py", line 194, in <module>
-    tratada = cv.morphologyEx(tratada,cv.MORPH_OPEN, np.ones((30,30)))
-KeyboardInterrupt
-PS C:\Users\LENOVO\Documents\uni\4t\psiv\tracking\psiv_trackers> & C:/Users/LENOVO/anaconda3/envs/prueba/python.exe c:/Users/LENOVO/Documents/uni/4t/psiv/tracking/psiv_trackers/adan.py
 baiax: 1 442
 baiax: 2 1685
 baiax: 3 3349
@@ -32,11 +26,6 @@ baiax: 5 5327
 puja: 1 7694
 baiax: 6 8106
 puja: 2 9979
-Traceback (most recent call last):
-  File "c:/Users/LENOVO/Documents/uni/4t/psiv/tracking/psiv_trackers/adan.py", line 193, in <module>
-    tratada = cv.dilate(fgmaskMOG, np.ones((3,3)), iterations=7)
-KeyboardInterrupt
-PS C:\Users\LENOVO\Documents\uni\4t\psiv\tracking\psiv_trackers> & C:/Users/LENOVO/anaconda3/envs/prueba/python.exe c:/Users/LENOVO/Documents/uni/4t/psiv/tracking/psiv_trackers/adan.py
 baiax: 1 442
 baiax: 2 1685
 baiax: 3 3349
@@ -48,11 +37,6 @@ puja: 2 9979
 puja: 3 10231
 puja: 4 11080
 puja: 5 14620
-Traceback (most recent call last):
-  File "c:/Users/LENOVO/Documents/uni/4t/psiv/tracking/psiv_trackers/adan.py", line 191, in <module>
-    fgmaskMOG = fgbg.apply(roi)
-KeyboardInterrupt
-PS C:\Users\LENOVO\Documents\uni\4t\psiv\tracking\psiv_trackers> & C:/Users/LENOVO/anaconda3/envs/prueba/python.exe c:/Users/LENOVO/Documents/uni/4t/psiv/tracking/psiv_trackers/adan.py
 baiax: 1 442
 baiax: 2 1685
 baiax: 3 3350
