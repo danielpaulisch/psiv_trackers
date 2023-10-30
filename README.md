@@ -79,8 +79,33 @@ Per acabar, si nom no està a les llistes _per_sota i _sobre comparem el valor d
 
 ### PROVES
 
-**explicació codi proves.ipynb DANIEL PAULÍ
+El fitxer proves.ipynb agafa els resultats de l'execució i un groundtruth manual, compara aquests i imprimeix mesures de com de bons són els resultats.
 
+En el propi fitxer trobem el groundtruth, la veritat sobre la qual validem el nostre programa. Consisteix en cinc variables tipus llista amb tuples que contenen el temps mínim de detecció, el temps màxim de detecció i si el cotxe puja o baixa.
+
+Aquest groundtruth l'hem creat manualment seguint els següents criteris:
+
+-Les motos no les contem.
+
+-Hi ha un marge de temps entre 5 i 10 segons.
+
+-Només contem els que passin per sota del pas de vianants.
+
+-Furgonetes i camions les contem, però parlem d'elles com cotxes.
+
+Després d'aquestes variables trobem una funció que ens passa frames a temps en format int. Això podria ser un problema però degut a que només fem comparacions i mai restem ni sumem aquest "error" de format no ens perjudica (de fet facilita molt les coses).
+Seguidament, tenim la part del codi que canviem en base al vídeo que volem que ens validi. Llegim d'un arxiu .txt el resultat del codi comptador de cotxes i el posem en format semblant al del groundtruth.
+Per últim, tenim la part del codi que compara. Primer mira quants pugen i quants baixen per totes dues llistes, i després mira quantes de les deteccions es troben realment en el vídeo segons el groundtruth. A partir d'aquí treu les estadístiques, aquestes són:
+
+*trobats*: percentatge de cotxes reals que el codi ha aconseguit detectar.
+
+*n_trobats*: nombre de cotxes reals que el codi ha aconseguit detectar.
+
+*n_fantasmes*: nombre de cotxes detectats que el codi s'ha inventat (no es troben al groundtruth).
+
+*fantasmes*: percentatge de cotxes detectats que el codi s'ha inventat.
+
+*diferència*: la diferència entre el nombre de cotxes que el codi es pensa que hi ha al pàrquing i el nombre de cotxes que realment hi ha. Si la variable és positiva vol dir que el nombre de cotxes dintre del pàrquing és menor al detectat. Si es negativa vol dir que el nombre de cotxes dintre del pàrquing és major al detectat. Busquem per tant en aquesta variable el 0.
 
 
 Un cop hem comprovat els nostres resultats amb el script de proves.ipynb hem obtingut els següents resultats.
