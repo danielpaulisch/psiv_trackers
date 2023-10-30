@@ -135,11 +135,15 @@ Un cop hem comprovat els nostres resultats amb el script de proves.ipynb hem obt
 - fantasmes: 0.0
 - Aquest cas és perfecte
 
--- Seqüència short: hi ha 2 cotxes que entren al pàrquing i 6 cotxes que en surten.
-+ Seqüència middle: hi ha 8 cotxes que entren al pàrquing i 3 cotxes que en surten.
-+ Seqüència shadow: hi ha 10 cotxes que entren al pàrquing i 3 cotxes que en surten.
-+ Seqüència long 1: hi ha 56 cotxes que entren al pàrquing i 19 cotxes que en surten.
-+ Seqüència long 2: hi ha 133 cotxes que entren al pàrquing i 10 cotxes que en surten.
+Seqüència short: hi ha 2 cotxes que entren al pàrquing i 6 cotxes que en surten.
+
+Seqüència middle: hi ha 8 cotxes que entren al pàrquing i 3 cotxes que en surten.
+
+Seqüència shadow: hi ha 10 cotxes que entren al pàrquing i 3 cotxes que en surten.
+
+Seqüència long 1: hi ha 56 cotxes que entren al pàrquing i 19 cotxes que en surten.
+
+Seqüència long 2: hi ha 133 cotxes que entren al pàrquing i 10 cotxes que en surten.
 
 Hem pogut abordar la majoria d'anomalies i outliers possibles en tots els vídeos, però hi ha casos que no sempre van del tot bé.
 
