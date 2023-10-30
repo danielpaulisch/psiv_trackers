@@ -12,7 +12,7 @@ Un cop ja tenim controlades totes les dificultats que es presenten, fem un segui
 
 Addicionalment, examinarem detalladament l'ús del seguiment d'objectes amb la biblioteca OpenCV, ja que és l'eina que més s'utilitza en aquests casos, gràcies a l'eficiència i efectivitat que mostra.Per altra banda, OpenCV també posa a les nostres mans, trackers ja implementats i integrats com ara, OOSTING, MIL, KCF, CSRT, MedianFlow, TLD, MOSSE i GOTURN.
 
-## OBJECTIU
+## OBJECTIUS
 
 L'objectiu d'aquest repte és saber quants cotxes es mouen en cada un dels carrils d'entrada i de sortida, és a dir, fer un comptador dels cotxes que pugen i baixen. Fer un programa com aquest fa que puguem monitorar i controlar el flux de sortida i d'entrada i el grau d'ocupació del pàrquing.
 
@@ -21,11 +21,15 @@ L'objectiu d'aquest repte és saber quants cotxes es mouen en cada un dels carri
 El GitHub l'hem distribuït de la següent manera:
 - directori vídeos: conté el vídeo en el qual vam fer proves.
 - tracker.py: fitxer Python que conté el codi final del programa tracker.
+- proves.ipynb: fitxer Jupyter que conté els resultats reals de tots els vídeos i que serveix per fer la validació
+- outputX resultados.txt: els 5 fixters que són txt són fixters text que contenen els resultats reals de cada vídeo.
 
 
 ## BASE DE DADES
 
 La base de dades que hem utilitzat han estat uns vídeos que els hem extret del Campus Virtual. Específicament el vídeo "Seqüència Short",  "Seqüència middle",  "Seqüència shadow",  "Seqüència long 1" i  "Seqüència long 2".
+Els hem separat en Train i Test. 
+Com a Train hem utilitzat "Seqüència Short" i "Seqüència shadow" i com a Test la resta. 
 
 
 ## PROCEDIMENT
@@ -69,22 +73,112 @@ Aquesta classe té una funcionalitat, "contar", que rep com a paràmetres centro
 Si el nom està a la llista _sobre i el valor de y és més petit que el valor de y del centroide, augmentem el comptador de _contar_baixa i s'afegeix com a comptat aquest objecte.
 Per acabar, si nom no està a les llistes _per_sota i _sobre comparem el valor de y amb el de y del centroide i s'afegeix a la llista de _sobre si _y és major que y del centroide i, per consegüent, si _y és més petit que la y del centroide s'afegeix a la llista _per_sota.
 
+
+
 ## RESULTATS
 
-Hem pogut detectar tots els cotxes sense cap anomalia i abordant tots els possibles outliers.
-L'únic punt a destacar està quan traiem el fons, ja que quan un cotxe es para i no està en moviment durat uns segons, aquest passa a ser part del fons i amb la funció createBackgroundSubtractorMOG l'elimina. En el nostre cas no ens afecta, així doncs no l'hem tingut en compte.
+### PROVES
 
-També hem fet el comptador sense cap problema, concretament ens han donats els següents resultats:
-- Seqüència short: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
-- Seqüència middle: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
-- Seqüència shadow: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
-- Seqüència long 1: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
-- Seqüència long 2: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
+El fitxer proves.ipynb agafa els resultats de l'execució i un groundtruth manual, compara aquests i imprimeix mesures de com de bons són els resultats.
 
-La comprovació la volíem haver fet amb una intel·ligència artificial, no obstant això, vam acabar decidint fer-ho de manera manual, ja que els vídeos no són massa llargs. 
+En el propi fitxer trobem el groundtruth, la veritat sobre la qual validem el nostre programa. Consisteix en cinc variables tipus llista amb tuples que contenen el temps mínim de detecció, el temps màxim de detecció i si el cotxe puja o baixa.
+
+Aquest groundtruth l'hem creat manualment seguint els següents criteris:
+
+-Les motos no les contem.
+
+-Hi ha un marge de temps entre 5 i 10 segons.
+
+-Només contem els que passin per sota del pas de vianants.
+
+-Furgonetes i camions les contem, però parlem d'elles com cotxes.
+
+Després d'aquestes variables trobem una funció que ens passa frames a temps en format int. Això podria ser un problema però degut a que només fem comparacions i mai restem ni sumem aquest "error" de format no ens perjudica (de fet facilita molt les coses).
+Seguidament, tenim la part del codi que canviem en base al vídeo que volem que ens validi. Llegim d'un arxiu .txt el resultat del codi comptador de cotxes i el posem en format semblant al del groundtruth.
+Per últim, tenim la part del codi que compara. Primer mira quants pugen i quants baixen per totes dues llistes, i després mira quantes de les deteccions es troben realment en el vídeo segons el groundtruth. A partir d'aquí treu les estadístiques, aquestes són:
+
+*trobats*: percentatge de cotxes reals que el codi ha aconseguit detectar.
+
+*n_trobats*: nombre de cotxes reals que el codi ha aconseguit detectar.
+
+*n_fantasmes*: nombre de cotxes detectats que el codi s'ha inventat (no es troben al groundtruth).
+
+*fantasmes*: percentatge de cotxes detectats que el codi s'ha inventat.
+
+*diferència*: la diferència entre el nombre de cotxes que el codi es pensa que hi ha al pàrquing i el nombre de cotxes que realment hi ha. Si la variable és positiva vol dir que el nombre de cotxes dintre del pàrquing és menor al detectat. Si es negativa vol dir que el nombre de cotxes dintre del pàrquing és major al detectat. Busquem per tant en aquesta variable el 0.
+
+
+Un cop hem comprovat els nostres resultats amb el script de proves.ipynb hem obtingut els següents resultats.
+
+#### output2: seqüencia middle
+- detectat: 3 que pugen i  8 que baixen 
+- real:     5 que pugen i  7 que baixen
+- trobats:   0.8333333333333334
+- n_trobats:   10  cotxes detectats en el vídeo
+- n_fantasmes: 1 cotxe inventat
+- fantasmes: 0.09090909090909091 
+- hi ha 3 de cotxes de més respecte la ocupació real
+
+
+#### output3: seqüencia shadow
+- detectat: 3 que pugen i 10 que baixen
+- real:     3 que pugen i 10 que baixen
+- trobats:   1.0
+- n_trobats:   13 cotxes detectats en el vídeo
+- n_fantasmes: 0
+- fantasmes: 0.0
+- Aquest cas és perfecte
+
+
+
+#### output5: seqüencia long 1
+- detectat: 19 que pugen i 56 que baixen
+- real:     11 que pugen i 25 que baixen
+- trobats:   0.8611111111111112
+- n_trobats:   31 cotxes detectats en el vídeo
+- n_fantasmes: 44 cotxes inventats
+- fantasmes: 0.5866666666666667
+- hi ha 23 de cotxes respecte la ocupació real
+
+
+#### output6: sequencia long 2
+- detectat: 10 que pugen i 133 que baixen
+- real:     9 pugen i 138 que baixen
+- trobats:   0.9183673469387755
+- n_trobats:   135 cotxes detectats en el vídeo
+- n_fantasmes: 8 cotxes inventats
+- fantasmes: 0.055944055944055944
+- hi ha 6 cotxes menys respecte l'ocupacio real  
+
+
+#### output7: seqüencia short
+- detectat: 6 que pugen i 2 que baixen 
+- real:     6 que pugen i 2 que baixen
+- trobats:   1.0
+- n_trobats:   8  cotxes detectats en el vídeo
+- n_fantasmes: 0  cotxes inventats
+- fantasmes: 0.0
+- Aquest cas és perfecte
+
+Seqüència short: hi ha 2 cotxes que entren al pàrquing i 6 cotxes que en surten.
+
+Seqüència middle: hi ha 8 cotxes que entren al pàrquing i 3 cotxes que en surten.
+
+Seqüència shadow: hi ha 10 cotxes que entren al pàrquing i 3 cotxes que en surten.
+
+Seqüència long 1: hi ha 56 cotxes que entren al pàrquing i 19 cotxes que en surten.
+
+Seqüència long 2: hi ha 133 cotxes que entren al pàrquing i 10 cotxes que en surten.
+
+Sembla que hem pogut abordar la majoria d'anomalies i outliers possibles en tots els vídeos, però hi ha casos que no sempre van del tot bé.
+
+La comprovació la volíem haver fet amb una intel·ligència artificial, no obstant això, vam acabar decidint fer-ho de manera manual, ja que els vídeos no són massa llargs i se'ns era més fàcil.
+
 
 ## CONCLUSIÓ
 
-Després de la comprovació que hem fet,  hem pogut corrobar que els resultats són correctes i el programa és bastant robust, aj que funciona correctament amb tots els exemples. 
-Com bé ja hem comentat abans a l'apartat de resultats, no hi ha hagut cap problema per fer aquest repte, en comparació amb el repte passat, l'únic punt a destacar seria la part del fonsc, ja que els cotxes que es queden aturats i no es mouen, passen a ser part del fons i per tant no es detecta el cotxe. En el nostre cas això no ens ha suposat cap problema per fer el repte, ja que no hi ha cap cas de cotxes que entren o surten del pàrquing que es queden aturats durant uns segons. 
-Per altra banda la detecció de cotxes l'hem fet sense cap problema i la part del comptador també.
+
+Després de la comprovació que hem fet, hem pogut corrobar que els resultats la majoria són correctes i el programa és bastant robust, ja que funciona correctament amb la majoria de casos. 
+No obstant això, hi ha hagut alguns problemes a l'hora de fer el repte, el primer punt a destacar seria el tema del camions molt grans, ja que com que ocupen tota l'escena i es van movent i es van parant, els detecta com si fossin molts cotxes
+Per altra banda tenim el problema de substitució, en el que quan un cotxe que baixa desapareix de l'escena i apareix un que puja, el nostre progrma ael detecta com el mateix. 
+Aquesta problema només passa un cop. 
