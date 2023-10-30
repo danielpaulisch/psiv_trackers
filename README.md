@@ -86,20 +86,13 @@ Per acabar, si nom no està a les llistes _per_sota i _sobre comparem el valor d
 Un cop hem comprovat els nostres resultats amb el script de proves.ipynb hem obtingut els següents resultats.
 
 output2: seqüencia middle
-
-detectat: 3 que pugen i  8 que baixen 
-
-real:     5 que pugen i  7 que baixen
-
-trobats:   0.8333333333333334
-
-n_trobats:   10  cotxes detectats en el vídeo
-
-n_fantasmes: 1 cotxe inventat
-
-fantasmes: 0.09090909090909091 
-
-hi ha 3 de cotxes de més respecte la ocupació real
+- detectat: 3 que pugen i  8 que baixen 
+- real:     5 que pugen i  7 que baixen
+- trobats:   0.8333333333333334
+- n_trobats:   10  cotxes detectats en el vídeo
+- n_fantasmes: 1 cotxe inventat
+- fantasmes: 0.09090909090909091 
+- hi ha 3 de cotxes de més respecte la ocupació real
 
 
 output3: seqüencia shadow
