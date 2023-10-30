@@ -147,6 +147,8 @@ La comprovació la volíem haver fet amb una intel·ligència artificial, no obs
 
 ## CONCLUSIÓ
 
+
 Després de la comprovació que hem fet, hem pogut corrobar que els resultats la majoria són correctes i el programa és bastant robust, ja que funciona correctament amb la majoria de casos. 
-No obstants això, hi ha hagit alguns problemes a l'hora de fer el repte, el primer punt a destacar seria la part del fons, ja que els cotxes que es queden aturats i no es mouen, passen a ser part del fons i per tant no es detecta el cotxe. En el nostre cas això no ens ha suposat cap problema per fer el repte, ja que no hi ha cap cas de cotxes que entren o surten del pàrquing que es queden aturats durant uns segons. 
-Per altra banda 
+No obstant això, hi ha hagut alguns problemes a l'hora de fer el repte, el primer punt a destacar seria el tema del camions molt grans, ja que com que ocupen tota l'escena i es van movent i es van parant, els detecta com si fossin molts cotxes
+Per altra banda tenim el problema de substitució, en el que quan un cotxe que baixa desapareix de l'escena i apareix un que puja, el nostre progrma ael detecta com el mateix. 
+Aquesta problema només passa un cop. 
