@@ -81,6 +81,49 @@ També hem fet el comptador sense cap problema, concretament ens han donats els 
 - Seqüència long 1: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
 - Seqüència long 2: hi ha __ cotxes que entren al pàrquing i __ cotxes que en surten.
 
+
+output2 sequencia middle
+detectat: 3 8 3 pujen 8 baixen 
+real:     5 7
+trobats:   0.8333333333333334
+n_trobats:   10  detectados coches 
+n_fantasmes: 1  s eha inventado 
+fantasmes: 0.09090909090909091 porcentaje fantasma s
+hi ha 3 de cotxes respecte la ocupacio real
+
+
+output3 shadow
+detectat: 3 10
+real:     3 10
+trobats:   1.0
+n_trobats:   13
+n_fantasmes: 0
+fantasmes: 0.0
+hi ha 0 de cotxes respecte la ocupacio real
+
+
+
+output5 sequencia long 1
+detectat: 19 56
+real:     11 25
+trobats:   0.8611111111111112
+n_trobats:   31
+n_fantasmes: 44
+fantasmes: 0.5866666666666667
+hi ha 23 de cotxes respecte la ocupacio real
+
+
+output6 sequencia long 2
+
+
+output7 sequencia short
+detectat: 6 2
+real:     6 2
+trobats:   1.0
+n_trobats:   8
+n_fantasmes: 0
+fantasmes: 0.0
+hi ha 0 de cotxes respecte la ocupacio real
 La comprovació la volíem haver fet amb una intel·ligència artificial, no obstant això, vam acabar decidint fer-ho de manera manual, ja que els vídeos no són massa llargs. 
 
 ## CONCLUSIÓ
