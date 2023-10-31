@@ -180,5 +180,5 @@ La comprovació la volíem haver fet amb una intel·ligència artificial, no obs
 
 Després de la comprovació que hem fet, hem pogut corrobar que els resultats la majoria són correctes i el programa és bastant robust, ja que funciona correctament amb la majoria de casos. 
 No obstant això, hi ha hagut alguns problemes a l'hora de fer el repte, el primer punt a destacar seria el tema del camions molt grans, ja que com que ocupen tota l'escena i es van movent i es van parant, els detecta com si fossin molts cotxes
-Per altra banda tenim el problema de substitució, en el que quan un cotxe que baixa desapareix de l'escena i apareix un que puja o que baixa, el nostre progrma el detecta com el mateix. 
+Per altra banda tenim el problema de substitució, en el que quan un cotxe que baixa desapareix de l'escena i apareix un que puja, el nostre progrma el detecta com el mateix. 
 
