@@ -1,82 +1,40 @@
-baiax: 1 168
-baiax: 2 916
-baiax: 3 2065
-baiax: 4 3474
-baiax: 5 6459
-baiax: 6 6525
-baiax: 7 7864
-baiax: 8 10454
-baiax: 9 13337
-baiax: 10 14027
-puja: 1 17074
-puja: 2 20622
-puja: 3 21007
-baiax: 1 442
-baiax: 2 1685
-baiax: 3 3349
-baiax: 4 4911
-baiax: 5 5327
-puja: 1 7694
-baiax: 6 8106
-baiax: 1 442
-baiax: 2 1685
-baiax: 3 3349
-baiax: 4 4911
-baiax: 5 5327
-puja: 1 7694
-baiax: 6 8106
-puja: 2 9979
-baiax: 1 442
-baiax: 2 1685
-baiax: 3 3349
-baiax: 4 4911
-baiax: 5 5327
-puja: 1 7694
-baiax: 6 8106
-puja: 2 9979
-puja: 3 10231
-puja: 4 11080
-puja: 5 14620
+
+
+
+
 baiax: 1 442
 baiax: 2 1685
 baiax: 3 3350
 baiax: 4 4911
 baiax: 5 5327
 baiax: 6 7773
-baiax: 7 8112
-baiax: 8 9526
-baiax: 9 10116
-baiax: 10 10237
-baiax: 11 10328
+baiax: 7 8109
+baiax: 8 9527
+baiax: 9 10114
+baiax: 10 10325
 puja: 1 11079
-baiax: 12 16096
-puja: 2 17146
-baiax: 13 17723
-baiax: 14 19311
-baiax: 15 19404
-baiax: 16 20564
-baiax: 17 22799
-puja: 3 24589
-baiax: 18 26023
-puja: 4 27521
-baiax: 19 28907
-baiax: 20 34206
-baiax: 21 35368
-puja: 5 37928
-baiax: 22 39469
-baiax: 23 40910
-baiax: 24 41218
-baiax: 25 41585
-puja: 6 43319
-baiax: 26 44006
-puja: 7 44313
-puja: 8 44733
-baiax: 27 45081
-baiax: 28 45573
-
-
-
-
-
-
+baiax: 11 16096
+puja: 2 17170
+baiax: 12 17304
+baiax: 13 17499
+puja: 3 18296
+baiax: 14 19404
+puja: 4 19500
+baiax: 15 20564
+baiax: 16 22799
+puja: 5 24589
+baiax: 17 26023
+puja: 6 27521
+baiax: 18 34206
+baiax: 19 35363
+puja: 7 37928
+baiax: 20 39469
+baiax: 21 40912
+baiax: 22 41218
+baiax: 23 41585
+puja: 8 43319
+baiax: 24 44078
+puja: 9 44733
+baiax: 25 45079
+baiax: 26 45571
 

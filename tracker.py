@@ -168,7 +168,7 @@ tracking = Tracker()
 
 
 
-capture = cv.VideoCapture('output6.mp4')
+capture = cv.VideoCapture('output5.mp4')
 fgbg = cv.bgsegm.createBackgroundSubtractorMOG()
 
 tracking = Tracker()
