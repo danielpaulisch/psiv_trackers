@@ -132,13 +132,13 @@ Un cop hem comprovat els nostres resultats amb el script de proves.ipynb hem obt
 
 
 #### output5: seqüencia long 1
-- detectat: 19 que pugen i 56 que baixen
-- real:     11 que pugen i 25 que baixen
-- trobats:   0.8611111111111112
-- n_trobats:   31 cotxes detectats en el vídeo
-- n_fantasmes: 44 cotxes inventats
-- fantasmes: 0.5866666666666667
-- hi ha 23 de cotxes respecte la ocupació real
+detectat: 9 que pugen i 26 que baixen
+real:     11 pugen i 25 que baixen
+trobats:   0.8055555555555556
+n_trobats:   29 cotxes detectats en el vídeo
+n_fantasmes: 6 cotxes inventats
+fantasmes: 0.17142857142857143
+hi ha 3 de cotxes de més respecte la ocupació real
 
 
 #### output6: sequencia long 2
