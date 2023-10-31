@@ -132,13 +132,13 @@ Un cop hem comprovat els nostres resultats amb el script de proves.ipynb hem obt
 
 
 #### output5: seqüencia long 1
-detectat: 9 que pugen i 26 que baixen
-real:     11 pugen i 25 que baixen
-trobats:   0.8055555555555556
-n_trobats:   29 cotxes detectats en el vídeo
-n_fantasmes: 6 cotxes inventats
-fantasmes: 0.17142857142857143
-hi ha 3 de cotxes de més respecte la ocupació real
+- detectat: 9 que pugen i 26 que baixen
+- real:     11 pugen i 25 que baixen
+- trobats:   0.8055555555555556
+- n_trobats:   29 cotxes detectats en el vídeo
+- n_fantasmes: 6 cotxes inventats
+- fantasmes: 0.17142857142857143
+- hi ha 3 de cotxes de més respecte la ocupació real
 
 
 #### output6: sequencia long 2
@@ -166,7 +166,7 @@ Seqüència middle: hi ha 8 cotxes que entren al pàrquing i 3 cotxes que en sur
 
 Seqüència shadow: hi ha 10 cotxes que entren al pàrquing i 3 cotxes que en surten.
 
-Seqüència long 1: hi ha 56 cotxes que entren al pàrquing i 19 cotxes que en surten.
+Seqüència long 1: hi ha 26 cotxes que entren al pàrquing i 9 cotxes que en surten.
 
 Seqüència long 2: hi ha 133 cotxes que entren al pàrquing i 10 cotxes que en surten.
 
